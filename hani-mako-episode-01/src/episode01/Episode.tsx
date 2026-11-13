@@ -15,7 +15,7 @@ import { FontLoader } from '../lib/fonts';
 const manifest = manifestJson as unknown as Manifest;
 export const getTimeline = (): Timeline => buildTimeline(manifest);
 
-const ring = { hani: C.teal, mako: C.sky };
+const ring = { hani: C.sky, mako: C.teal };
 
 const Sparkle: React.FC<{ x: number; y: number; s: number; o: number }> = ({ x, y, s, o }) => (
   <path
@@ -49,8 +49,8 @@ export const World: React.FC<{ v: SceneView; f: number }> = ({ v, f }) => {
       <BowlFront x={v.bowl.x} y={v.bowl.y} />
       {!H.behindBowl ? <Hani p={H.p} layer="body" t={f} armsInFront={H.armsInFront} /> : null}
       <Mako p={M.p} layer="body" t={f} />
-      <Plate x={PLATE.hani.x} y={PLATE.hani.y} rim={C.teal} rimDark={C.tealDark} />
-      <Plate x={PLATE.mako.x} y={PLATE.mako.y} rim={C.sky} rimDark={C.skyDark} />
+      <Plate x={PLATE.hani.x} y={PLATE.hani.y} rim={C.sky} rimDark={C.skyDark} />
+      <Plate x={PLATE.mako.x} y={PLATE.mako.y} rim={C.teal} rimDark={C.tealDark} />
       {plateBerries.map(berry)}
       <Hani p={H.p} layer="front" t={f} armsInFront={H.armsInFront} />
       <Mako p={M.p} layer="front" t={f} />
@@ -117,7 +117,7 @@ const TitleCard: React.FC<{ p: number; age: number; left: number; end?: boolean 
         style={{
           fontSize: end ? 110 : 150,
           fontWeight: 900,
-          color: C.teal,
+          color: C.sky,
           WebkitTextStroke: `10px ${C.ink}`,
           paintOrder: 'stroke fill',
           letterSpacing: 2,
@@ -125,7 +125,7 @@ const TitleCard: React.FC<{ p: number; age: number; left: number; end?: boolean 
           textShadow: '0 8px 0 rgba(46,58,75,0.18)',
         }}
       >
-        Hani <span style={{ color: C.apricot }}>&amp;</span> <span style={{ color: C.sky }}>Mako</span>
+        Hani <span style={{ color: C.apricot }}>&amp;</span> <span style={{ color: C.teal }}>Mako</span>
       </div>
       <div
         style={{

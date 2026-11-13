@@ -14,11 +14,11 @@
 - PASS — countH1: hani counts Một. Hai. Ba. Bốn. over [S1,S2,S3,S4] = plate contents [S1,S2,S3,S4] (each highlighted once)
 - PASS — countH2: hani counts Một. Hai. Ba. over [S1,S2,S3] = plate contents [S1,S2,S3] (each highlighted once)
 - PASS — countM2: mako counts Một. Hai. Ba. over [S4,S5,S6] = plate contents [S4,S5,S6] (each highlighted once)
-- PASS — Badge mako=2 at 1:00.5 matches plate count 2
-- PASS — Badge hani=4 at 1:09.1 matches plate count 4
-- PASS — Badge hani=3 at 1:49.4 matches plate count 3
-- PASS — Badge mako=3 at 1:55.2 matches plate count 3
+- PASS — Badge mako=2 at 1:00.7 matches plate count 2
+- PASS — Badge hani=4 at 1:09.4 matches plate count 4
+- PASS — Badge hani=3 at 1:49.6 matches plate count 3
+- PASS — Badge mako=3 at 1:55.4 matches plate count 3
 - PASS — Viewer pause: 5.0 s of silence on a 4-vs-2 hold
 - PASS — No overlapping dialogue clips
-- PASS — Runtime 139.83 s is within 135–165 s
+- PASS — Runtime 140.07 s is within 135–165 s
 - PASS — Plate slots cover the needed counts

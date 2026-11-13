@@ -6,12 +6,24 @@ Recorded 2026-11-13. No paid services were used, nothing was uploaded or publish
 
 | Asset | Source |
 |---|---|
-| Hani and Mako designs, rigs, poses, expressions | Original SVG code: `src/lib/characters/*`, `src/lib/rig.ts` |
+| Hani and Mako rigs, poses, expressions | Original SVG code: `src/lib/characters/*`, `src/lib/rig.ts` |
 | Garden, blanket, bowl, plates, strawberries, badges, bubbles | Original SVG code: `src/lib/environment`, `src/lib/props` |
 | Story, script, storyboard, Vietnamese dialogue | Written for this project |
 | Music (I–vi–IV–V arrangement in F, plucks, marimba, bass, pad) | Synthesised procedurally in `tools/build_audio.py` (no samples, no loops) |
 | Sound effects (plop, whoosh, hop, boing, chimes, sparkle, tap) and garden ambience | Synthesised procedurally in `tools/build_audio.py` |
 | Thumbnail, contact sheet | Rendered from the episode itself |
+
+## Owner-supplied character designs
+
+Hani (girl) and Mako (boy) follow character sheets supplied by the owner (3D-style illustrations of two curly-haired
+toddlers; the girl's appearance is based on a real child shown in the owner's photos). They were redrawn by hand as
+2D SVG cutouts — no pixels from the references are used, and the references are not stored in the project.
+
+- **Owner to confirm:** the right to use the reference designs (if the sheets were made with an image generator,
+  check that service's terms for commercial use) and consent to publishing a likeness of the child.
+- **Changed for originality:** the sheet's dress (sky-blue tulle, sheer sleeves, snowflake brooch, long gloves)
+  closely resembles Disney's Frozen "Elsa" costume. The episode uses an original variant: pearl collar, small star
+  brooch, short puff sleeves, no gloves. Footwear is drawn as generic blue clogs and pink shoes, with no brand marks.
 
 ## Third-party components
 

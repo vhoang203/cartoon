@@ -77,7 +77,7 @@ An already-licensed commercial TTS can be used the same way: export its WAVs int
 ## Project layout
 
 ```
-src/lib/                reusable series assets (palette, rig, Hani, Mako, props, garden, fonts)
+src/lib/                reusable series assets (palette, rig, Hani [girl], Mako [boy], props, garden, fonts)
 src/episode01/          dialogue.json, cues.ts (storyboard), layout.ts, timeline.ts, evaluate.ts, Episode.tsx, Thumbnail.tsx
 src/generated/          audio manifest (generated)
 public/                 fonts (Nunito, OFL), dialogue clips, sfx (generated)
@@ -88,8 +88,15 @@ docs/                   script/storyboard, timing, recording script, provenance,
 
 ## Assumptions made
 
-- No owner artwork was supplied, so Hani and Mako are original provisional designs per the brief.
-- Hani's pronouns are not specified; materials say "bạn" / "Hani".
+- Character designs follow the owner's reference sheets (supplied after the first draft): **Hani** is the girl
+  (curly bun, blue hair tie, sky-blue tulle dress, pink shoes) and **Mako** is the boy (curly hair, mint henley,
+  navy suspenders, cream shorts, blue clogs). They were redrawn as flat 2D cutout rigs. At the owner's request the
+  dress was made original (pearl collar, small star brooch, puff sleeves, no gloves) instead of the Frozen/Elsa-like
+  details of the sheet. The boy's toy camera was left out of this episode to keep the scene free of extra objects.
+- The rabbit "ear flop" beat became Hani's loose curl falling over her eye. Plates follow the outfits:
+  Hani's plate (left) has a sky-blue rim, Mako's plate (right) a teal rim.
+- The reference photos and sheets are not stored in the repository (they show a real child).
+- Dialogue uses "mình" / "bạn" and the names, so no gendered pronouns were needed.
 - The bowl count at the start ("một… sáu") was added because it directly supports the objective
   (six whole strawberries) and gave the opening a natural reason for Hani to be at the bowl.
 - Runtime is 139.8 s (inside 135–165 s); it was reached with story beats, not padding.

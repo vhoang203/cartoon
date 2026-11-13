@@ -1,4 +1,7 @@
-// Mako — small apricot bear with a sky-blue scarf. Compact, round silhouette.
+// Mako — little boy, adapted to 2D cutout from the owner's character sheet:
+// dark curly mop of hair, big dark-brown eyes, mint henley T-shirt with a
+// pocket, navy suspenders with brass clips, cream cuffed shorts, blue clogs.
+// Rig mapping: earL/earR -> gentle bounce of the curls.
 import React from 'react';
 import { C, OUTLINE } from '../palette';
 import { CharParams, SPECS } from '../rig';
@@ -6,9 +9,18 @@ import { Arm, Brow, Eye, Mouth } from './parts';
 
 const spec = SPECS.mako;
 
-const TORSO =
-  'M -98 -6 C -105 -54 -86 -102 -56 -116 C -30 -126 30 -126 56 -116 C 86 -102 105 -54 98 -6 C 66 5 -66 5 -98 -6 Z';
-const HEAD = 'M -96 2 C -96 -52 -54 -86 0 -86 C 54 -86 96 -52 96 2 C 96 50 56 80 0 80 C -56 80 -96 50 -96 2 Z';
+const SHIRT =
+  'M -88 -54 C -92 -82 -82 -106 -56 -116 C -30 -124 30 -124 56 -116 C 82 -106 92 -82 88 -54 C 60 -46 -60 -46 -88 -54 Z';
+const SHORTS = 'M -98 -8 C -102 -36 -96 -54 -88 -62 L 88 -62 C 96 -54 102 -36 98 -8 C 64 2 -64 2 -98 -8 Z';
+const HEAD = 'M -90 0 C -91 -52 -50 -82 0 -82 C 50 -82 91 -52 90 0 C 89 48 52 76 0 76 C -52 76 -89 48 -90 0 Z';
+const FRINGE =
+  'M -92 -14 C -98 -78 -44 -104 0 -102 C 44 -104 98 -78 92 -14 C 86 -34 76 -46 62 -50 C 56 -62 40 -66 28 -58 C 18 -70 0 -70 -8 -60 C -18 -70 -38 -66 -44 -54 C -60 -56 -76 -44 -80 -28 C -84 -24 -88 -20 -92 -14 Z';
+const FRINGE_EDGE =
+  'M 92 -14 C 86 -34 76 -46 62 -50 C 56 -62 40 -66 28 -58 C 18 -70 0 -70 -8 -60 C -18 -70 -38 -66 -44 -54 C -60 -56 -76 -44 -80 -28 C -84 -24 -88 -20 -92 -14';
+// curl bumps for the mop (cx, cy, r)
+const MOP: [number, number, number][] = [
+  [-88, -40, 27], [-74, -78, 32], [-44, -106, 35], [-6, -120, 36], [34, -114, 35], [66, -92, 33], [88, -58, 29], [94, -24, 22], [-94, -10, 20],
+];
 
 export const Mako: React.FC<{ p: CharParams; layer: 'body' | 'front'; t: number; armsInFront?: boolean }> = ({
   p,
@@ -18,96 +30,102 @@ export const Mako: React.FC<{ p: CharParams; layer: 'body' | 'front'; t: number;
 }) => {
   const sx = 1 + (1 - p.squash) * 0.6;
   const root = `translate(${p.x} ${p.y + p.hop}) rotate(${p.lean}) scale(${sx} ${p.squash})`;
+  const arm = (side: 'armL' | 'armR') => (
+    <Arm spec={spec} side={side} arm={p[side]} fill={C.skin} width={28} pawR={16} sleeve={C.mint} sleeveT={0.26} />
+  );
   if (layer === 'front') {
     return (
       <g transform={root}>
-        <Arm spec={spec} side="armL" arm={p.armL} fill={C.apricot} pad={C.apricotLight} width={33} pawR={19} />
-        {armsInFront ? <Arm spec={spec} side="armR" arm={p.armR} fill={C.apricot} pad={C.apricotLight} width={33} pawR={19} /> : null}
+        {arm('armL')}
+        {armsInFront ? arm('armR') : null}
       </g>
     );
   }
   const hc = spec.headC;
   const fx = p.turn * 10;
   const breathe = 1 + Math.sin(t / 16 + 1.3) * 0.008;
-  const sway = Math.sin(t / 22) * 3;
-  // ears twitch slightly with "earL/earR" (offset from rabbit defaults)
-  const earTwL = (p.earL + 10) * 0.35;
-  const earTwR = (p.earR - 12) * 0.35;
+  const bounce = (p.earL + 10) * 0.3 + Math.sin(t / 21) * 0.8;
   return (
     <g transform={root}>
       <ellipse cx={0} cy={2} rx={112} ry={17} fill={C.ink} opacity={0.12} />
-      <defs>
-        <radialGradient id="mako-fur" cx="45%" cy="32%" r="75%">
-          <stop offset="0%" stopColor="#F9C08A" />
-          <stop offset="70%" stopColor={C.apricot} />
-          <stop offset="100%" stopColor={C.apricotShade} />
-        </radialGradient>
-        <radialGradient id="mako-head" cx="42%" cy="34%" r="72%">
-          <stop offset="0%" stopColor="#FAC796" />
-          <stop offset="72%" stopColor={C.apricot} />
-          <stop offset="100%" stopColor={C.apricotShade} />
-        </radialGradient>
-      </defs>
       <g transform={`scale(1 ${breathe})`}>
-        <path d={TORSO} fill="url(#mako-fur)" stroke={C.ink} strokeWidth={OUTLINE} strokeLinejoin="round" />
-        <ellipse cx={0} cy={-46} rx={56} ry={40} fill={C.apricotLight} />
+        {/* shorts */}
+        <path d={SHORTS} fill={C.shorts} stroke={C.ink} strokeWidth={OUTLINE} strokeLinejoin="round" />
+        <path d="M -94 -20 C -64 -12 -20 -12 -6 -16 M 6 -16 C 20 -12 64 -12 94 -20" stroke={C.shortsShade} strokeWidth={5} fill="none" />
+        <path d="M 0 -60 L 0 -14" stroke={C.shortsShade} strokeWidth={3} />
+        {/* shirt */}
+        <rect x={-10} y={-134} width={20} height={20} fill={C.skin} />
+        <path d={SHIRT} fill={C.mint} stroke={C.ink} strokeWidth={OUTLINE} strokeLinejoin="round" />
+        <path d="M -24 -121 Q 0 -108 24 -121" stroke={C.mintDark} strokeWidth={5} fill="none" strokeLinecap="round" />
+        <path d="M 0 -112 L 0 -86" stroke={C.mintDark} strokeWidth={3.5} />
+        {[-106, -97, -88].map((y) => (
+          <circle key={y} cx={5} cy={y} r={3.2} fill={C.shorts} stroke={C.inkSoft} strokeWidth={1.2} />
+        ))}
+        <rect x={-58} y={-104} width={24} height={20} rx={4} fill="none" stroke={C.mintDark} strokeWidth={3.5} />
+        {/* suspenders */}
+        {[-1, 1].map((s) => (
+          <g key={s}>
+            <path d={`M ${s * 34} -58 L ${s * 46} -120`} stroke={C.ink} strokeWidth={17} strokeLinecap="round" />
+            <path d={`M ${s * 34} -58 L ${s * 46} -120`} stroke={C.navy} strokeWidth={11} strokeLinecap="round" />
+            <rect x={s * 34 - 8} y={-70} width={16} height={11} rx={2} fill={C.brass} stroke={C.ink} strokeWidth={2.5} />
+          </g>
+        ))}
       </g>
-      {[-52, 52].map((x) => (
+      {/* blue clogs */}
+      {[-48, 48].map((x) => (
         <g key={x}>
-          <ellipse cx={x} cy={-6} rx={37} ry={19} fill={C.apricot} stroke={C.ink} strokeWidth={OUTLINE} />
-          <ellipse cx={x} cy={-4} rx={15} ry={8} fill={C.apricotLight} />
+          <ellipse cx={x} cy={-6} rx={33} ry={18} fill={C.clog} stroke={C.ink} strokeWidth={OUTLINE} />
+          {[-12, 0, 12].map((d) => (
+            <circle key={d} cx={x + d} cy={-10} r={2.8} fill={C.clogDark} />
+          ))}
         </g>
       ))}
-      {/* scarf: neck band */}
-      <path
-        d="M -74 -124 C -40 -106 40 -106 74 -124 L 76 -102 C 40 -86 -40 -86 -76 -102 Z"
-        fill={C.sky}
-        stroke={C.ink}
-        strokeWidth={OUTLINE}
-        strokeLinejoin="round"
-      />
-      <path d="M -50 -108 C -20 -98 20 -98 50 -108" stroke={C.skyLight} strokeWidth={5} fill="none" opacity={0.9} />
-      {/* scarf: hanging tail with a gentle sway */}
-      <g transform={`rotate(${sway} -36 -100)`}>
-        <path
-          d="M -50 -102 C -60 -82 -64 -62 -60 -40 L -30 -42 C -32 -62 -28 -82 -22 -100 Z"
-          fill={C.sky}
-          stroke={C.ink}
-          strokeWidth={OUTLINE}
-          strokeLinejoin="round"
-        />
-        <path d="M -57 -68 L -29 -70 M -59 -54 L -30 -56" stroke={C.skyLight} strokeWidth={5} />
-        <path d="M -56 -40 L -57 -30 M -46 -41 L -46 -31 M -36 -42 L -35 -32" stroke={C.skyDark} strokeWidth={4} strokeLinecap="round" />
-      </g>
-      <ellipse cx={-36} cy={-102} rx={16} ry={12} fill={C.sky} stroke={C.ink} strokeWidth={OUTLINE} />
       {/* head */}
       <g transform={`rotate(${p.headTilt} ${spec.neck.x} ${spec.neck.y})`}>
         <g transform={`translate(${hc.x} ${hc.y + p.headY})`}>
-          {[
-            [-70, earTwL],
-            [70, earTwR],
-          ].map(([x, rot]) => (
-            <g key={x} transform={`rotate(${rot} ${x - fx * 0.3} -40)`}>
-              <circle cx={x - fx * 0.3} cy={-60} r={31} fill={C.apricot} stroke={C.ink} strokeWidth={OUTLINE} />
-              <circle cx={x - fx * 0.3} cy={-58} r={16} fill={C.apricotLight} />
+          <g transform={`rotate(${bounce} 0 -40)`}>
+            <g stroke={C.ink} strokeWidth={OUTLINE} fill={C.hair}>
+              {MOP.map(([x, y, r], i) => (
+                <circle key={i} cx={x} cy={y} r={r} />
+              ))}
             </g>
-          ))}
-          <path d={HEAD} fill="url(#mako-head)" stroke={C.ink} strokeWidth={OUTLINE} strokeLinejoin="round" />
-          <g transform={`translate(${fx} 0)`}>
-            <ellipse cx={0} cy={30} rx={44} ry={30} fill={C.apricotLight} />
-            <ellipse cx={-60} cy={20} rx={15} ry={9} fill={C.blush} opacity={0.6 * p.blush} />
-            <ellipse cx={60} cy={20} rx={15} ry={9} fill={C.blush} opacity={0.6 * p.blush} />
-            <Eye x={-36} y={-8} rx={10.5} ry={13.5} open={p.eyeOpen} happy={p.happyEyes} lookX={p.lookX} lookY={p.lookY} />
-            <Eye x={36} y={-8} rx={10.5} ry={13.5} open={p.eyeOpen} happy={p.happyEyes} lookX={p.lookX} lookY={p.lookY} />
-            <Brow x={-36} y={-34} side={-1} browY={p.browY} tilt={p.browTilt} w={13} />
-            <Brow x={36} y={-34} side={1} browY={p.browY} tilt={p.browTilt} w={13} />
-            <ellipse cx={0} cy={14} rx={14} ry={9.5} fill={C.ink} />
-            <ellipse cx={-4} cy={11} rx={4.5} ry={2.6} fill={C.white} opacity={0.7} />
-            <Mouth x={0} y={33} open={p.mouthOpen} smile={p.smile} round={p.mouthRound} style="bear" />
+            <g fill={C.hair}>
+              {MOP.map(([x, y, r], i) => (
+                <circle key={i} cx={x} cy={y} r={r - 5} />
+              ))}
+            </g>
+            <ellipse cx={0} cy={-46} rx={96} ry={70} fill={C.hair} />
+            <path d="M -60 -96 q 12 -12 26 -2 M -14 -116 q 12 -12 26 -2 M 30 -104 q 12 -10 24 2 M 62 -78 q 10 -8 18 4 M -84 -56 q 8 -10 18 -2" stroke={C.hairLight} strokeWidth={4.5} fill="none" strokeLinecap="round" />
           </g>
+          {[-1, 1].map((s) => (
+            <ellipse key={s} cx={s * 88 - fx * 0.3} cy={8} rx={13} ry={17} fill={C.skin} stroke={C.ink} strokeWidth={OUTLINE} />
+          ))}
+          <defs>
+            <radialGradient id="mako-skin" cx="45%" cy="38%" r="72%">
+              <stop offset="0%" stopColor={C.skinLight} />
+              <stop offset="75%" stopColor={C.skin} />
+              <stop offset="100%" stopColor={C.skinShade} />
+            </radialGradient>
+          </defs>
+          <path d={HEAD} fill="url(#mako-skin)" stroke={C.ink} strokeWidth={OUTLINE} strokeLinejoin="round" />
+          <g transform={`translate(${fx} 0)`}>
+            <ellipse cx={-54} cy={24} rx={15} ry={9} fill={C.blush} opacity={0.55 * p.blush} />
+            <ellipse cx={54} cy={24} rx={15} ry={9} fill={C.blush} opacity={0.55 * p.blush} />
+            <Eye x={-33} y={0} rx={12.5} ry={15.5} open={p.eyeOpen} happy={p.happyEyes} lookX={p.lookX} lookY={p.lookY} iris={C.eye} />
+            <Eye x={33} y={0} rx={12.5} ry={15.5} open={p.eyeOpen} happy={p.happyEyes} lookX={p.lookX} lookY={p.lookY} iris={C.eye} />
+            <Brow x={-33} y={-30} side={-1} browY={p.browY} tilt={p.browTilt} w={12} />
+            <Brow x={33} y={-30} side={1} browY={p.browY} tilt={p.browTilt} w={12} />
+            <path d="M -7 18 Q 0 24 7 18" stroke={C.skinShade} strokeWidth={4} strokeLinecap="round" fill="none" />
+            <Mouth x={0} y={37} open={p.mouthOpen} smile={p.smile} round={p.mouthRound} style="kid" />
+          </g>
+          <g transform={`translate(${fx * 0.5} 0)`}>
+            <path d={FRINGE} fill={C.hair} />
+            <path d={FRINGE_EDGE} fill="none" stroke={C.ink} strokeWidth={OUTLINE} strokeLinejoin="round" strokeLinecap="round" />
+          </g>
+          <path d="M -50 -80 q 10 -10 22 -2 M 10 -86 q 12 -10 24 0 M 50 -66 q 8 -8 16 2" stroke={C.hairLight} strokeWidth={4} fill="none" strokeLinecap="round" />
         </g>
       </g>
-      {armsInFront ? null : <Arm spec={spec} side="armR" arm={p.armR} fill={C.apricot} pad={C.apricotLight} width={33} pawR={19} />}
+      {armsInFront ? null : arm('armR')}
     </g>
   );
 };

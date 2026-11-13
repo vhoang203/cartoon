@@ -13,7 +13,7 @@ PICKS = [  # (cue, offset frames, label)
     ("open", 70, "1 · Title / garden"),
     ("enter", 60, "1 · Hani brings the bowl (6)"),
     ("countH0", 150, "1 · Counting the bowl: 6"),
-    ("L03", 30, "1 · Ear flop (personality)"),
+    ("L03", 30, "1 · Curl over the eye (personality)"),
     ("L07", 50, "1 · Hani's plate L / Mako's plate R"),
     ("share", 100, "2 · Quick sharing (arcs)"),
     ("L09", 20, "2 · After sharing: 4 / 2, bowl empty"),

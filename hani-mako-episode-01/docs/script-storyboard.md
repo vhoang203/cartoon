@@ -3,7 +3,10 @@
 **Learning objective (only one):** share six whole strawberries between two friends so that each has three.
 Counting and comparing quantities support it. Equal sharing is the friends' explicit, chosen goal.
 
-**Setting:** one garden picnic (blanket, a bowl, Hani's teal-rimmed plate on screen-left, Mako's sky-blue
+**Characters:** Hani — a little girl with a big curly bun, sky-blue dress; quick and energetic. Mako — a little boy
+with curly hair, mint shirt and suspenders; calm and observant. (Designs from the owner's character sheets.)
+
+**Setting:** one garden picnic (blanket, a bowl, Hani's sky-blue-rimmed plate on screen-left, Mako's teal-rimmed
 plate on screen-right). Shots reuse the same world: WIDE, TWO (medium), TABLE (detail), MAKO_CU.
 
 **Strawberry continuity (IDs S1–S6):** bowl S1–S6 → after sharing Hani S1–S4 / Mako S5–S6 / bowl empty →
@@ -22,9 +25,9 @@ Exact frame timings: `docs/timing.md` (generated from `src/episode01/cues.ts`).
 | TABLE | Hani touches each strawberry once; each lights up with a number tag. | **Hani:** Một, hai, ba, bốn, năm, sáu. |
 | TABLE | | **Mako:** Ồ, sáu quả dâu chín đỏ! |
 | TWO | Mako invites Hani to the left seat. | **Mako:** Chào Hani! Ngồi đây với mình nhé. |
-| TWO | Hani hops over; the folded ear tip flops down (boing). | — |
-| TWO | Mako giggles, points. | **Mako:** Hì hì, tai của Hani lại cụp xuống kìa. |
-| TWO | Hani pushes the ear back up; it springs into its usual fold. | **Hani:** Tai mình đang vui đó mà! |
+| TWO | Hani hops over; her loose curl bounces down over one eye (boing). | — |
+| TWO | Mako giggles, points. | **Mako:** Hì hì, tóc của Hani rơi xuống mắt rồi kìa. |
+| TWO | Hani pushes the curl back; it springs back beside her temple. | **Hani:** Tóc mình đang vui đó mà! |
 | TWO | Hani states the goal. | **Hani:** Mako ơi, mình chia để mỗi bạn có số dâu bằng nhau nhé! |
 | TWO | Mako points left plate, then right plate; explicit agreement. | **Mako:** Ừ! Đĩa này của Hani, đĩa này của mình. / Hai đĩa, số dâu bằng nhau nhé. |
 

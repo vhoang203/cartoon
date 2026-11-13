@@ -177,9 +177,9 @@ const resolveKey = (who: CharId, key: CharKey, ctx: Ctx): CharParams => {
     p.lookY = 0.12;
     p.turn = 0;
   } else if (tp === 'up') {
-    p.lookX = who === 'hani' ? 0.55 : -0.3;
-    p.lookY = -1;
-    p.turn = who === 'hani' ? 0.25 : 0;
+    p.lookX = who === 'hani' ? -0.55 : -0.3;
+    p.lookY = -0.9;
+    p.turn = who === 'hani' ? -0.2 : 0;
   } else {
     const dx = tp.x - hp.x;
     const dy = tp.y - hp.y;

@@ -151,7 +151,7 @@ export const CUES: Cue[] = [
   {
     id: 'sit',
     beat: 1,
-    note: 'Hani hops to the left seat. On landing, the folded ear tip flops down over the side of the face (personality beat).',
+    note: 'Hani hops to the left seat. On landing, the loose curl bounces down over one eye (personality beat).',
     dur: 1.9,
     hani: [
       { move: { to: 'seat', dur: 1.0, hops: 2 }, look: { x: 700, y: 900 } },
@@ -164,8 +164,8 @@ export const CUES: Cue[] = [
     id: 'L03',
     beat: 1,
     say: 'L03',
-    note: 'Mako giggles and points at Hani\'s ear: "Hì hì, tai của Hani lại cụp xuống kìa."',
-    mako: [{ expr: 'laugh', giggle: true, hand: { x: 1030, y: 690 }, look: { x: 760, y: 560 } }, { at: 1.6, expr: 'smile', look: 'hani' }],
+    note: 'Mako giggles and points at Hani\'s curl: "Hì hì, tóc của Hani rơi xuống mắt rồi kìa."',
+    mako: [{ expr: 'laugh', giggle: true, hand: { x: 1030, y: 690 }, look: { x: 690, y: 690 } }, { at: 1.6, expr: 'smile', look: 'hani' }],
     hani: { expr: 'oops', look: 'up' },
     pad: 0.25,
   },
@@ -173,7 +173,7 @@ export const CUES: Cue[] = [
     id: 'L04',
     beat: 1,
     say: 'L04',
-    note: 'Hani pushes the ear back up with a paw — it springs into its usual fold: "Tai mình đang vui đó mà!"',
+    note: 'Hani pushes the curl back with a hand — it springs back beside the temple: "Tóc mình đang vui đó mà!"',
     hani: [
       { pose: 'earFix', t: 0.35, over: { earFold: 150, earR: 26 } },
       { at: 0.55, over: { earFold: 48, earR: 12 }, t: 0.3 },

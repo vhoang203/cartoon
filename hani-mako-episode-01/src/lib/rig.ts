@@ -118,7 +118,7 @@ const HANI_POSES: Record<string, PoseDef> = {
   reach: { armL: A(-14, 0.85), armR: A(60, 1.0, 0) },
   wave: { armL: A(-150, 0.95, 0.2), armR: A(-38, 0.62, -0.35), wave: 'armL' },
   idea: { armL: A(38, 0.6, 0.35), armR: A(168, 0.95, -0.1), headTilt: -4 },
-  earFix: { armL: { local: { x: -30, y: -262 }, bend: 0.4 }, armR: A(-38, 0.62, -0.35), headTilt: -6 },
+  earFix: { armL: { local: { x: -46, y: -226 }, bend: 0.4 }, armR: A(-38, 0.62, -0.35), headTilt: -6 },
   carryBowl: { armL: { local: { x: -150, y: -44 } }, armR: { local: { x: 150, y: -44 } } },
   ready: { armL: A(-128, 0.82, 0.25), armR: A(128, 0.82, -0.25), headTilt: -2 }, // paws up, clear of the bowl
   open: { armL: A(-60, 0.74, 0.2), armR: A(60, 0.74, -0.2) },

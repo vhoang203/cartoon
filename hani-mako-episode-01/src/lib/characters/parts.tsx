@@ -12,7 +12,9 @@ export const Arm: React.FC<{
   pad?: string;
   width?: number;
   pawR?: number;
-}> = ({ spec, side, arm, fill, pad, width = 30, pawR = 17 }) => {
+  sleeve?: string; // optional sleeve colour covering the upper part of the arm
+  sleeveT?: number;
+}> = ({ spec, side, arm, fill, pad, width = 30, pawR = 17, sleeve, sleeveT = 0.38 }) => {
   const s = side === 'armL' ? spec.shoulderL : spec.shoulderR;
   const h = pawLocal(spec, side, arm);
   const L = arm.len * spec.armBase;
@@ -27,6 +29,22 @@ export const Arm: React.FC<{
       <path d={d} stroke={fill} strokeWidth={width} strokeLinecap="round" fill="none" />
       <circle cx={h.x} cy={h.y} r={pawR} fill={fill} />
       {pad ? <ellipse cx={h.x} cy={h.y + 3} rx={pawR * 0.45} ry={pawR * 0.32} fill={pad} opacity={0.8} /> : null}
+      {sleeve
+        ? (() => {
+            // de Casteljau split of the quadratic at sleeveT
+            const t = sleeveT;
+            const p01 = { x: s.x + (m.x - s.x) * t, y: s.y + (m.y - s.y) * t };
+            const p11 = { x: m.x + (h.x - m.x) * t, y: m.y + (h.y - m.y) * t };
+            const e = { x: p01.x + (p11.x - p01.x) * t, y: p01.y + (p11.y - p01.y) * t };
+            const sd = `M ${s.x} ${s.y} Q ${p01.x} ${p01.y} ${e.x} ${e.y}`;
+            return (
+              <>
+                <path d={sd} stroke={C.ink} strokeWidth={width + 7 + OUTLINE * 2} strokeLinecap="round" fill="none" />
+                <path d={sd} stroke={sleeve} strokeWidth={width + 7} strokeLinecap="round" fill="none" />
+              </>
+            );
+          })()
+        : null}
     </g>
   );
 };
@@ -40,7 +58,9 @@ export const Eye: React.FC<{
   happy: number;
   lookX: number;
   lookY: number;
-}> = ({ x, y, rx, ry, open, happy, lookX, lookY }) => {
+  iris?: string;
+  lashes?: -1 | 1; // draw two small lashes on the outer side (-1 = left eye, 1 = right eye)
+}> = ({ x, y, rx, ry, open, happy, lookX, lookY, iris = C.ink, lashes }) => {
   const ox = clamp(lookX, -1, 1) * rx * 0.42;
   const oy = clamp(lookY, -1, 1) * ry * 0.3;
   if (happy > 0.5) {
@@ -69,7 +89,15 @@ export const Eye: React.FC<{
   const ery = ry * open;
   return (
     <g>
-      <ellipse cx={x + ox} cy={y + oy} rx={rx} ry={ery} fill={C.ink} />
+      {lashes ? (
+        <path
+          d={`M ${x + lashes * rx * 0.7} ${y - ery * 0.72} l ${lashes * 7} ${-6} M ${x + lashes * rx * 0.98} ${y - ery * 0.3} l ${lashes * 8} ${-3}`}
+          stroke={C.ink}
+          strokeWidth={3.5}
+          strokeLinecap="round"
+        />
+      ) : null}
+      <ellipse cx={x + ox} cy={y + oy} rx={rx} ry={ery} fill={iris} />
       {open > 0.45 ? (
         <>
           <circle cx={x + ox - rx * 0.32} cy={y + oy - ery * 0.38} r={rx * 0.38} fill={C.white} />
@@ -109,7 +137,7 @@ export const Mouth: React.FC<{
   open: number;
   smile: number;
   round: number;
-  style: 'bunny' | 'bear';
+  style: 'bunny' | 'bear' | 'kid';
 }> = ({ x, y, open, smile, round, style }) => {
   if (open < 0.07) {
     const s = clamp(smile, -1, 1);
@@ -121,6 +149,17 @@ export const Mouth: React.FC<{
           strokeWidth={4}
           strokeLinecap="round"
           strokeLinejoin="round"
+          fill="none"
+        />
+      );
+    }
+    if (style === 'kid') {
+      return (
+        <path
+          d={`M ${x - 14} ${y - 2} Q ${x} ${y + 6 + s * 7} ${x + 14} ${y - 2}`}
+          stroke={C.ink}
+          strokeWidth={4}
+          strokeLinecap="round"
           fill="none"
         />
       );

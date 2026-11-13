@@ -10,7 +10,7 @@ are unresolved (see `docs/provenance.md`). Publish `hani-mako-ep01-final.mp4` on
 
 ## Description (Vietnamese)
 
-> Hani — chú thỏ nhỏ nhanh nhảu — và Mako — bạn gấu hiền lành — cùng chuẩn bị một bữa picnic trong vườn.
+> Hani — cô bé tóc xoăn nhanh nhảu — và Mako — cậu bạn hiền lành, hay quan sát — cùng chuẩn bị một bữa picnic trong vườn.
 > Có sáu quả dâu thật ngon, và hai bạn muốn mỗi bạn có số dâu bằng nhau. Nhưng Hani chia hơi nhanh tay mất rồi!
 > Bé hãy cùng Hani và Mako đếm, so sánh và tìm cách để hai đĩa bằng nhau nhé.
 >
@@ -51,4 +51,6 @@ comments and some features; that is expected for this content.
 - If synthetic/AI voices are used in the final, review YouTube's current "altered or synthetic content" disclosure
   guidance; clearly animated content usually does not need the label, but the owner should decide.
 - Meeting a technical checklist does not guarantee monetisation; YouTube reviews channels and content under its own policies.
-- Suggested tags: hoạt hình cho bé, học đếm, chia đều, toán mầm non, Hani và Mako, thỏ và gấu, bé học toán.
+- Suggested tags: hoạt hình cho bé, học đếm, chia đều, toán mầm non, Hani và Mako, bé học toán.
+- The characters are based on a real child's likeness: think about the family's privacy before publishing
+  (real names, locations, and personal photos in the channel or description).

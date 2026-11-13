@@ -5,7 +5,7 @@ with ~0.3 s of room tone before and after. Names are spelled **Hani** ("Ha-ni") 
 Counting words (N*) are recorded one number per file. Durations below are the temporary TTS takes —
 a guide only; the timeline adapts automatically to the new lengths.
 
-Hani: small, bright, energetic, a little quick. Mako: calm, warm, gently funny, slightly lower.
+Hani (little girl): bright, energetic, a little quick. Mako (little boy): calm, warm, gently funny.
 Audience is 4–6 years old: speak clearly and a little slower than conversational speed.
 
 | ID | Character | Line (Vietnamese) | Temp length | Direction | File name |
@@ -13,8 +13,8 @@ Audience is 4–6 years old: speak clearly and a little slower than conversation
 | L01 | Hani | Mako ơi! Mình mang dâu tới rồi nè! | 2.10 s | arriving, a little out of breath, excited | `L01.wav` |
 | L01b | Mako | Ồ! Có bao nhiêu quả dâu vậy Hani? | 2.11 s | curious, warm | `L01b.wav` |
 | L02 | Mako | Chào Hani! Ngồi đây với mình nhé. | 1.73 s | welcoming | `L02.wav` |
-| L03 | Mako | Hì hì, tai của Hani lại cụp xuống kìa. | 2.82 s | gentle giggle, affectionate (not teasing) | `L03.wav` |
-| L04 | Hani | Tai mình đang vui đó mà! | 1.20 s | cheerful, unbothered | `L04.wav` |
+| L03 | Mako | Hì hì, tóc của Hani rơi xuống mắt rồi kìa. | 2.90 s | gentle giggle, affectionate (not teasing) — about Hani's curl | `L03.wav` |
+| L04 | Hani | Tóc mình đang vui đó mà! | 1.31 s | cheerful, unbothered | `L04.wav` |
 | L05 | Mako | Ồ, sáu quả dâu chín đỏ! | 1.88 s | delighted surprise | `L05.wav` |
 | L06 | Hani | Mako ơi, mình chia để mỗi bạn có số dâu bằng nhau nhé! | 3.63 s | eager, clear — this states the goal | `L06.wav` |
 | L07 | Mako | Ừ! Đĩa này của Hani, đĩa này của mình. | 2.81 s | agreeing, pointing left then right | `L07.wav` |

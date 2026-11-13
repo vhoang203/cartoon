@@ -13,7 +13,7 @@ export const Thumbnail: React.FC = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: C.cream }}>
       <FontLoader />
-      <SceneFrame tl={tl} f={f} width={1280} height={720} camera={{ cx: 960, cy: 800, z: 1.5 }} />
+      <SceneFrame tl={tl} f={f} width={1280} height={720} camera={{ cx: 960, cy: 715, z: 1.5 }} />
       <div
         style={{
           position: 'absolute',

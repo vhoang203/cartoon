@@ -8,7 +8,7 @@ d = json.loads((ROOT / "src/episode01/dialogue.json").read_text())
 m = json.loads((ROOT / "src/generated/audio-manifest.json").read_text())["lines"]
 DIRECTION = {
     "L01": "arriving, a little out of breath, excited", "L01b": "curious, warm",
-    "L02": "welcoming", "L03": "gentle giggle, affectionate (not teasing)", "L04": "cheerful, unbothered",
+    "L02": "welcoming", "L03": "gentle giggle, affectionate (not teasing) — about Hani's curl", "L04": "cheerful, unbothered",
     "L05": "delighted surprise", "L06": "eager, clear — this states the goal", "L07": "agreeing, pointing left then right",
     "L07b": "calm, explicit agreement", "L08": "very eager, quick", "L09": "proud, pleased",
     "L10": "thoughtful, slow", "L11": "calm statement", "L12": "curious, kind", "L13": "cheerful (not yet noticing)",
@@ -33,7 +33,7 @@ out = [
     "Counting words (N*) are recorded one number per file. Durations below are the temporary TTS takes —",
     "a guide only; the timeline adapts automatically to the new lengths.",
     "",
-    "Hani: small, bright, energetic, a little quick. Mako: calm, warm, gently funny, slightly lower.",
+    "Hani (little girl): bright, energetic, a little quick. Mako (little boy): calm, warm, gently funny.",
     "Audience is 4–6 years old: speak clearly and a little slower than conversational speed.",
     "",
     "| ID | Character | Line (Vietnamese) | Temp length | Direction | File name |",

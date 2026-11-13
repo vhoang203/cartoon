@@ -28,6 +28,27 @@ export const C = {
   tongue: '#F08C8C',
   sun: '#FFE08A',
   white: '#FFFFFF',
+  // children (owner-supplied designs, adapted to 2D)
+  skin: '#F2C7A2',
+  skinShade: '#DFA982',
+  skinLight: '#F9DCC2',
+  hair: '#2B1D19',
+  hairLight: '#4A3229',
+  eye: '#2A1C17',
+  dress: '#5DB4EA',
+  dressDark: '#3E9AD6',
+  dressLight: '#A9DBF7',
+  hairTie: '#2F7FD8',
+  shoePink: '#F2A3BC',
+  shoePinkDark: '#D9809E',
+  mint: '#A3DCC4',
+  mintDark: '#7EC6A9',
+  navy: '#3E5C8F',
+  brass: '#C9A15E',
+  shorts: '#F4EFE1',
+  shortsShade: '#E0D8C4',
+  clog: '#4F7FD1',
+  clogDark: '#3A64AE',
 } as const;
 
 export const OUTLINE = 5;
