@@ -1,0 +1,5 @@
+[{"frame":"face","keys":"blink_L=1","out":"renders/hani/wip/k_blink_L.png"},
+ {"frame":"face","keys":"blink_R=1","out":"renders/hani/wip/k_blink_R.png"},
+ {"frame":"face","keys":"brow_up=1","out":"renders/hani/wip/k_brow_up.png"},
+ {"frame":"face","keys":"brow_worry=1","out":"renders/hani/wip/k_brow_worry.png"},
+ {"frame":"face","eye":"0.35,-0.6,0.66","out":"renders/hani/wip/k_look_L.png"}]

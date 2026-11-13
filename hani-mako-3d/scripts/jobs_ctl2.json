@@ -1,0 +1,4 @@
+[{"frame":"face","eye":"-0.3,-0.6,0.45","out":"renders/hani/wip/k_look_down_R.png"},
+ {"frame":"bust","view":"q34","bones":"bun:25,0,15;curl_temple.R.01:0,0,35;curl_ear.R.02:40,0,0","out":"renders/hani/wip/k_hairbones.png"},
+ {"frame":"hands","bones":"fingers.L:70,0,0;thumb.L:40,0,0","out":"renders/hani/wip/k_grab.png"},
+ {"frame":"hands","out":"renders/hani/wip/k_hand_rest.png"}]

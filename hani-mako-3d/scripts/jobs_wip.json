@@ -1,0 +1,3 @@
+[{"pose":"seated","frame":"seated","out":"renders/hani/wip/i_seated.png"},
+ {"pose":"seated","frame":"seated","view":"side","out":"renders/hani/wip/i_seatedside.png"},
+ {"pose":"seated","frame":"seated","view":"q34","out":"renders/hani/wip/i_seated34.png"}]

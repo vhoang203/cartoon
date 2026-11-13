@@ -1,0 +1,3 @@
+[{"frame":"face","keys":"mouth_O=1,brow_up=0.6","out":"renders/hani/expr_O.png"},
+ {"frame":"face","keys":"blink_L=1,blink_R=1,mouth_smile=0.4","out":"renders/hani/expr_blink.png"},
+ {"frame":"face","keys":"brow_worry=1,mouth_O=0.12","eye":"-0.12,-0.7,0.62","out":"renders/hani/expr_worried.png"}]

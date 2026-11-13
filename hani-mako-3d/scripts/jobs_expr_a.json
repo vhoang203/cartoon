@@ -1,0 +1,3 @@
+[{"frame":"face","keys":"","out":"renders/hani/expr_neutral.png"},
+ {"frame":"face","keys":"mouth_smile=1,brow_up=0.25","out":"renders/hani/expr_smile.png"},
+ {"frame":"face","keys":"mouth_open=0.9,brow_up=0.4,mouth_smile=0.2","out":"renders/hani/expr_mouth_open.png"}]
