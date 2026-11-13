@@ -1,0 +1,265 @@
+{
+  "_comment": "Source of truth for Episode 01 dialogue. 'text' is what appears in captions; TTS input applies the pronunciation map. Edit a line, then run `npm run build` - only changed lines are regenerated.",
+  "pronunciation": {
+    "Hani": "Ha-ni",
+    "Mako": "Ma-kô",
+    "Hì hì": "Hì, hì"
+  },
+  "voices": {
+    "hani": {
+      "label": "Hani (temp TTS)",
+      "model": "tools/voices/vi_VN-vais1000-medium.onnx",
+      "length_scale": 1.45,
+      "noise_scale": 0.62,
+      "noise_w_scale": 0.75,
+      "pitch_semitones": 3.2
+    },
+    "mako": {
+      "label": "Mako (temp TTS)",
+      "model": "tools/voices/vi_VN-vais1000-medium.onnx",
+      "length_scale": 1.6,
+      "noise_scale": 0.55,
+      "noise_w_scale": 0.7,
+      "pitch_semitones": -1.6
+    }
+  },
+  "lines": [
+    {
+      "id": "L01",
+      "speaker": "hani",
+      "text": "Mako ơi! Mình mang dâu tới rồi nè!"
+    },
+    {
+      "id": "L01b",
+      "speaker": "mako",
+      "text": "Ồ! Có bao nhiêu quả dâu vậy Hani?"
+    },
+    {
+      "id": "L02",
+      "speaker": "mako",
+      "text": "Chào Hani! Ngồi đây với mình nhé."
+    },
+    {
+      "id": "L03",
+      "speaker": "mako",
+      "text": "Hì hì, tai của Hani lại cụp xuống kìa."
+    },
+    {
+      "id": "L04",
+      "speaker": "hani",
+      "text": "Tai mình đang vui đó mà!"
+    },
+    {
+      "id": "L05",
+      "speaker": "mako",
+      "text": "Ồ, sáu quả dâu chín đỏ!"
+    },
+    {
+      "id": "L06",
+      "speaker": "hani",
+      "text": "Mako ơi, mình chia để mỗi bạn có số dâu bằng nhau nhé!"
+    },
+    {
+      "id": "L07",
+      "speaker": "mako",
+      "text": "Ừ! Đĩa này của Hani, đĩa này của mình."
+    },
+    {
+      "id": "L07b",
+      "speaker": "mako",
+      "text": "Hai đĩa, số dâu bằng nhau nhé."
+    },
+    {
+      "id": "L08",
+      "speaker": "hani",
+      "text": "Để mình chia cho! Mình chia nhanh lắm!"
+    },
+    {
+      "id": "L09",
+      "speaker": "hani",
+      "text": "Xong rồi! Bát hết dâu rồi nè."
+    },
+    {
+      "id": "L10",
+      "speaker": "mako",
+      "text": "Ơ... để mình xem nào."
+    },
+    {
+      "id": "L11",
+      "speaker": "mako",
+      "text": "Đĩa của mình có hai quả."
+    },
+    {
+      "id": "L12",
+      "speaker": "mako",
+      "text": "Còn đĩa của Hani thì sao?"
+    },
+    {
+      "id": "L13",
+      "speaker": "hani",
+      "text": "Đĩa của mình có bốn quả!"
+    },
+    {
+      "id": "L14",
+      "speaker": "hani",
+      "text": "Ôi! Bốn quả và hai quả. Không bằng nhau rồi."
+    },
+    {
+      "id": "L15",
+      "speaker": "mako",
+      "text": "Không sao đâu Hani. Mình cùng sửa nhé!"
+    },
+    {
+      "id": "L16",
+      "speaker": "mako",
+      "text": "Các bạn ơi, làm thế nào để hai đĩa có số dâu bằng nhau nhỉ?"
+    },
+    {
+      "id": "L16b",
+      "speaker": "hani",
+      "text": "Các bạn thử nghĩ xem nào!"
+    },
+    {
+      "id": "L17",
+      "speaker": "hani",
+      "text": "A! Mình biết rồi!",
+      "stretch": 1.2
+    },
+    {
+      "id": "L18",
+      "speaker": "hani",
+      "text": "Mình đưa một quả cho Mako nhé?"
+    },
+    {
+      "id": "L19",
+      "speaker": "mako",
+      "text": "Ý hay đó! Bạn thử đi."
+    },
+    {
+      "id": "L20",
+      "speaker": "mako",
+      "text": "Cảm ơn Hani!",
+      "stretch": 1.2
+    },
+    {
+      "id": "L21",
+      "speaker": "hani",
+      "text": "Mình đếm lại nhé. Các bạn đếm cùng nha!"
+    },
+    {
+      "id": "L22",
+      "speaker": "hani",
+      "text": "Đĩa mình có ba quả!"
+    },
+    {
+      "id": "L23",
+      "speaker": "mako",
+      "text": "Đĩa mình cũng có ba quả!"
+    },
+    {
+      "id": "L24",
+      "speaker": "hani",
+      "text": "Mỗi bạn có ba quả."
+    },
+    {
+      "id": "L25",
+      "speaker": "mako",
+      "text": "Hai đĩa bằng nhau rồi!"
+    },
+    {
+      "id": "L26",
+      "speaker": "hani",
+      "text": "Hoan hô! Mình cùng nhau làm được rồi!"
+    },
+    {
+      "id": "L26b",
+      "speaker": "mako",
+      "text": "Bữa picnic của tụi mình sẵn sàng rồi!"
+    },
+    {
+      "id": "L26c",
+      "speaker": "hani",
+      "text": "Cảm ơn các bạn đã cùng đếm với tụi mình!"
+    },
+    {
+      "id": "L27",
+      "speaker": "both",
+      "text": "Chia đều nhau, ai cũng vui!"
+    },
+    {
+      "id": "L28",
+      "speaker": "hani",
+      "text": "Tạm biệt các bạn!",
+      "stretch": 1.2
+    },
+    {
+      "id": "L29",
+      "speaker": "mako",
+      "text": "Hẹn gặp lại nhé!",
+      "stretch": 1.2
+    },
+    {
+      "id": "N1_hani",
+      "speaker": "hani",
+      "text": "Một.",
+      "count": true,
+      "stretch": 3.0
+    },
+    {
+      "id": "N2_hani",
+      "speaker": "hani",
+      "text": "Hai.",
+      "count": true,
+      "stretch": 2.4
+    },
+    {
+      "id": "N3_hani",
+      "speaker": "hani",
+      "text": "Ba.",
+      "count": true,
+      "stretch": 2.4
+    },
+    {
+      "id": "N4_hani",
+      "speaker": "hani",
+      "text": "Bốn.",
+      "count": true,
+      "stretch": 2.4
+    },
+    {
+      "id": "N5_hani",
+      "speaker": "hani",
+      "text": "Năm.",
+      "count": true,
+      "stretch": 2.4
+    },
+    {
+      "id": "N6_hani",
+      "speaker": "hani",
+      "text": "Sáu.",
+      "count": true,
+      "stretch": 2.4
+    },
+    {
+      "id": "N1_mako",
+      "speaker": "mako",
+      "text": "Một.",
+      "count": true,
+      "stretch": 2.4
+    },
+    {
+      "id": "N2_mako",
+      "speaker": "mako",
+      "text": "Hai.",
+      "count": true,
+      "stretch": 2.4
+    },
+    {
+      "id": "N3_mako",
+      "speaker": "mako",
+      "text": "Ba.",
+      "count": true,
+      "stretch": 2.4
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+# Continuity & lesson check (2026-11-13)
+
+- PASS — Inventory: exactly six unique strawberries (S1–S6) at every frame, including carried ones
+- PASS — No two settled strawberries ever share a slot
+- PASS — No overlapping settled strawberries (minimum centre distance 50 px ≥ 48 px)
+- PASS — Initial: bowl = S1..S6
+- PASS — After distribution: Hani = S1,S2,S3,S4 / Mako = S5,S6 / bowl empty (got H=S1,S2,S3,S4 M=S5,S6 B=)
+- PASS — After correction: Hani = S1,S2,S3 / Mako = S4,S5,S6 (got H=S1,S2,S3 M=S4,S5,S6)
+- PASS — Correction moves exactly ONE strawberry (S4) from Hani's plate to Mako's plate
+- PASS — No camera cut or camera move starts during the correction transfer
+- PASS — Camera is settled before the correction transfer begins
+- PASS — Total transfers = 7 (6 distribution + 1 correction), got 7
+- PASS — countM1: mako counts Một. Hai. over [S5,S6] = plate contents [S5,S6] (each highlighted once)
+- PASS — countH1: hani counts Một. Hai. Ba. Bốn. over [S1,S2,S3,S4] = plate contents [S1,S2,S3,S4] (each highlighted once)
+- PASS — countH2: hani counts Một. Hai. Ba. over [S1,S2,S3] = plate contents [S1,S2,S3] (each highlighted once)
+- PASS — countM2: mako counts Một. Hai. Ba. over [S4,S5,S6] = plate contents [S4,S5,S6] (each highlighted once)
+- PASS — Badge mako=2 at 1:00.5 matches plate count 2
+- PASS — Badge hani=4 at 1:09.1 matches plate count 4
+- PASS — Badge hani=3 at 1:49.4 matches plate count 3
+- PASS — Badge mako=3 at 1:55.2 matches plate count 3
+- PASS — Viewer pause: 5.0 s of silence on a 4-vs-2 hold
+- PASS — No overlapping dialogue clips
+- PASS — Runtime 139.83 s is within 135–165 s
+- PASS — Plate slots cover the needed counts

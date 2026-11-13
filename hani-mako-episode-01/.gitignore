@@ -1,0 +1,7 @@
+node_modules/
+.venv/
+build/
+tools/voices/*.onnx
+public/audio/mix.wav
+public/audio/music/
+out/test-clip.mp4

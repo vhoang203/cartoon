@@ -1,0 +1,29 @@
+{
+  "name": "hani-mako-episode-01",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hani & Mako — Episode 01: Bữa picnic của Hani và Mako",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "build:audio": ".venv/bin/python tools/build_audio.py tts",
+    "export": "node --experimental-strip-types tools/export.ts",
+    "mix": ".venv/bin/python tools/build_audio.py mix",
+    "render:raw": "remotion render src/index.ts Episode01 build/render-raw.mp4",
+    "master": ".venv/bin/python tools/build_audio.py master build/render-raw.mp4 out/${OUT_NAME:-hani-mako-ep01-DRAFT-tempvoice}.mp4",
+    "thumbnail": "remotion still src/index.ts Thumbnail out/hani-mako-ep01-thumbnail.png",
+    "contact": ".venv/bin/python tools/contact_sheet.py out/${OUT_NAME:-hani-mako-ep01-DRAFT-tempvoice}.mp4 out/hani-mako-ep01-contact-sheet.png",
+    "render:test": "remotion render src/index.ts TestClip out/test-clip.mp4",
+    "asr": ".venv/bin/python tools/build_audio.py asr",
+    "build": "npm run build:audio && npm run export && npm run mix && npm run render:raw && npm run master && npm run thumbnail && npm run contact"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.543",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.543"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.2",
+    "typescript": "5.9.3"
+  }
+}
